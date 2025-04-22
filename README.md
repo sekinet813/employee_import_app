@@ -27,17 +27,7 @@ Laravel + Vue.js による従業員データのCSVインポート機能を提供
 └── test   ← 従業員テストデータ
 ```
 
-### 初回セットアップ
-
-#### Laravel プロジェクトを作成
-
-```bash
-docker-compose run --rm app composer create-project laravel/laravel .
-```
-
-補足: すでに src/ ディレクトリに Laravel プロジェクトがある場合はこの手順は不要です。
-
-#### コンテナのビルドと起動
+### コンテナのビルドと起動
 
 ビルド
 ```bash
@@ -49,22 +39,12 @@ docker-compose build
 docker-compose up -d
 ```
 
-#### Breeze インストール & Vue セットアップ
-
-```bash
-docker-compose exec app composer require laravel/breeze --dev
-docker-compose exec app php artisan breeze:install blade
-docker-compose exec app npm install
-docker-compose exec app npm install vue
-docker-compose exec app npm install -D @vitejs/plugin-vue
-```
-
-#### 起動確認
+### 起動確認
 
 ブラウザで起動していることを確認
 http://localhost:8000
 
-### コマンド例
+## コマンド例
 ### Laravel バージョン確認
 ```bash
 docker-compose exec app php artisan --version
